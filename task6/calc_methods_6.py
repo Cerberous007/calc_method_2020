@@ -65,41 +65,41 @@ def grid_method(q, r, f, x_0, h, x_n, alpha, beta):
     return LA.solve(a, b)
 
 
-if __name__ == "__main__":
-    epsilon = 1e-2
 
-    def q1(x):
-        return - (1 + x / 2) * (x - 3)
+epsilon = 1e-2
 
-    def r1(x):
-        return (x - 3) * math.exp(x/2)
+def q1(x):
+    return - (1 + x / 2) * (x - 3)
 
-    def f1(x):
-        return - (2 - x) * (x - 3)
+def r1(x):
+    return (x - 3) * math.exp(x/2)
 
-    alpha1 = [1, 0, 0]
-    beta1 = [1, 0, 0]
+def f1(x):
+    return - (2 - x) * (x - 3)
 
-    rich = richardson(epsilon, q1, r1, f1, -1, 0.2, 1, alpha1, beta1)
-    print("погрешности 1: {0}".format(rich[0]))
-    fig, ax = plt.subplots()
-    ax.plot(np.linspace(1, -1, 2 * int(rich[1])), rich[2])
-    plt.show()
+alpha1 = [1, 0, 0]
+beta1 = [1, 0, 0]
 
-    def q2(x):
-        return -math.cos(x) / (1 + x)
+rich = richardson(epsilon, q1, r1, f1, -1, 0.2, 1, alpha1, beta1)
+print("погрешности 1: {0}".format(rich[0]))
+fig, ax = plt.subplots()
+ax.plot(np.linspace(1, -1, 2 * int(rich[1])), rich[2])
+plt.show()
 
-    def r2(x):
-        return 2 - x
+def q2(x):
+    return -math.cos(x) / (1 + x)
 
-    def f2(x):
-        return x + 1
+def r2(x):
+    return 2 - x
 
-    alpha2 = [0.2, 1, -0.8]
-    beta2 = [0.9, 1, -0.1]
-    epsilon2 = 1e-3
-    rich = richardson(epsilon2, q2, r2, f2, 0, 0.1, 1, alpha2, beta2)
-    print("погрешности 2: {0}".format(rich[0]))
-    fig, ax = plt.subplots()
-    ax.plot(np.linspace(1, -1, 2 * int(rich[1])), rich[2])
-    plt.show()
+def f2(x):
+    return x + 1
+
+alpha2 = [0.2, 1, -0.8]
+beta2 = [0.9, 1, -0.1]
+epsilon2 = 1e-3
+rich = richardson(epsilon2, q2, r2, f2, 0, 0.1, 1, alpha2, beta2)
+print("погрешности 2: {0}".format(rich[0]))
+fig, ax = plt.subplots()
+ax.plot(np.linspace(1, -1, 2 * int(rich[1])), rich[2])
+plt.show()
