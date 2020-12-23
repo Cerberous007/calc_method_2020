@@ -4,15 +4,15 @@ import scipy.linalg as sp_linalg
 import numpy.linalg as lin
 import matplotlib.pyplot as plt
 
-'''# test 1
+# test 1
 def a(x, t):
-    return np.sin(t)/70
+    return 1
 
 def f(x, t):
-    return np.cos(3*t)**2 + 5*t**3
+    return 2*t - 1
 
 def phi(x):
-    return 3-np.cos(x)
+    return x**2
 
 def alpha1(t):
     return 1
@@ -21,7 +21,7 @@ def alpha2(t):
     return 0
 
 def alpha(t):
-    return 2 - 3*t**2
+    return t**2
 
 def beta1(t):
     return 1
@@ -30,17 +30,17 @@ def beta2(t):
     return 0
 
 def beta(t):
-    return 3 * np.cos(t) - np.cos(1)'''
+    return 1+ t**2
 
 '''# test 2
 def a(x, t):
-    return np.sin(t)/70
+    return 1
 
 def f(x, t):
-    return np.cos(3*t)**2 + 5*t**3
+    return 2*np.cos(2*x)*(np.cos(2*t + np.pi/2) + 2*np.sin(2*t + np.pi/2))
 
 def phi(x):
-    return 3-np.cos(x)
+    return np.cos(2*x)
 
 def alpha1(t):
     return 1
@@ -49,7 +49,7 @@ def alpha2(t):
     return 0
 
 def alpha(t):
-    return 2 * np.exp(-t)
+    return np.sin(2*t + np.pi/2)
 
 def beta1(t):
     return 1
@@ -58,63 +58,7 @@ def beta2(t):
     return 0
 
 def beta(t):
-    return 3 - np.cos(t)*np.sin(t) - np.cos(1)'''
-
-'''# test3
-def a(x, t):
-    return np.sin(t)/70
-
-def f(x, t):
-    return np.cos(3*t)**2 + 5*t**3
-
-def phi(x):
-    return 3.05 -np.cos(x)
-
-def alpha1(t):
-    return 1
-
-def alpha2(t):
-    return 0
-
-def alpha(t):
-    return 2 - 3.05 *t**2
-
-def beta1(t):
-    return 1
-
-def beta2(t):
-    return 0
-
-def beta(t):
-    return 3.05 *np.cos(t) - np.cos(1)'''
-
-'''# test 4
-def a(x, t):
-    return 1/200
-
-def f(x, t):
-    return 3*np.sin(t) + t
-
-def phi(x):
-    return 10*x**2
-
-def alpha1(t):
-    return 1
-
-def alpha2(t):
-    return 0.7
-
-def alpha(t):
-    return 8 * np.cos(t) - 8
-
-def beta1(t):
-    return 1
-
-def beta2(t):
-    return 0.5
-
-def beta(t):
-    return 7*np.sin(t) + 10'''
+    return np.sin(2*t + np.pi/2)*np.cos(2)'''
 
 
 def Tridiag_alg(n, a, c, b, g, x):
